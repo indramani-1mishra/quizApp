@@ -1,0 +1,158 @@
+body
+{
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+#itemcontainer
+{
+    height:600px;
+    width:620px;
+ display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    border:3px solid grey;
+}
+#itemcontainer div:first-child
+{
+    display:flex;
+    justify-content:space-between;
+    flex-direction:column;
+    align-items:center;
+    width:90%;
+    
+    margin-top:25px;
+    background-color:#757272;
+    color:white;
+    border:2px solid silver;
+}
+#qucontainer
+{
+    height:40px;
+    
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    line-height:40px;
+    color:white;
+    font-size:25px;
+    word-spacing:2px;
+    text-transform:capitalize;
+}
+#qs
+{
+    height:300px;
+    width:90%;
+    
+    border:2px solid grey;
+    display:flex;
+    justify-content:center;
+    
+    
+}
+#question_container
+{
+    height:70%;
+    width:100%;
+    
+}
+#question_container>p
+{
+    height:40px;
+    width:100%;
+    border:2px solid white;
+    background-color:white;
+    color:black;
+    text-align:center;
+    line-height:40px;
+    font-size:20px;
+    font-weight:bold;
+    text-transform:capitalize;
+    
+}
+
+.fisti
+{
+    height:40px;
+    width:100%;
+    background-color:white;
+    display:flex;
+    justify-content:space-between;
+    
+    
+}
+.fisti input:nth-child(1)
+{
+    border:none;
+    color:#261111;
+    text-transform:capitalize;
+    margin-left:10px;
+    
+    
+}
+.fisti input:nth-child(2)
+{
+    margin-right:20px;
+    width:20px;
+    background-color:green;
+}
+
+#question_container>input
+{
+    height:40px;
+    width:100%;
+    margin:2px;
+    border:2px solid silver;   
+}
+#button_container
+{
+    height:70px;
+    border:2px solid silver;
+    width:90%;
+    margin-bottom:20px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+#button_container>button
+{
+    padding:5px;
+    width:80px;
+    text-transform:capitalize;
+    border:none;
+    border-radius:5px;
+    background-color:dimgrey;
+    color:white;
+    cursor:pointer;
+}
+@media (max-width:430px)
+{
+    #question_container>p
+{
+    height:40px;
+    width:100%;
+    border:2px solid white;
+    background-color:white;
+    color:black;
+    text-align:center;
+    line-height:40px;
+    font-size:7px;
+    font-weight:bold;
+    text-transform:capitalize;
+    
+}
+    
+}
+
