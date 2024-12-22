@@ -22,19 +22,17 @@ questionCount.textContent=0;
 
 
 
-let question =["What is the capital of France?", "Who wrote the play Romeo and Juliet", "What is the largest planet in our solar system?", " What is the largest ocean on Earth?", "What is the chemical symbol for water?", "Who was the first President of India?", " Which river is known as the lifeline of India?", " Who is known as the Father of the Nation in India?","What is the name of the monkey king who was a loyal ally of Lord Rama?", " What is the name of Lord Rama's bow that was used to break the Shiva Dhanush?"];
+let question =["What is the capital of France?", "Who wrote the play Romeo and Juliet", "What is the largest planet in our solar system?", " What is the largest ocean on Earth?", "What is the chemical symbol for water?", "Who was the first President of India?", " Which river is known as the lifeline of India?", " Who is known as the Father of the Nation in India?","What is the name of the monkey king who was a loyal ally of Lord Rama?", " What is 7*8"];
 
 
 let changebutton = document.getElementById('btn');
 
 document.addEventListener('DOMContentLoaded',()=>{
-
-    
 let currentQuestion = 0;
 
 changebutton.addEventListener('click', function() {
 
-    if(currentQuestion <question.length)
+   if(currentQuestion <question.length)
     {
         p.innerHTML = question[currentQuestion];
         
@@ -152,25 +150,60 @@ changebutton.addEventListener('click', function() {
             }
         else if(currentQuestion == '9')
             {
-                i1.value = "Saranga";
-                i2.value = "Kodanda";
-                i3.value = "Gandiva";
-                i4.value = "pinka";
-                c1.value = "Saranga";
-                c2.value = "Kodanda";
-                c3.value = "Gandiva";
-                c4.value = "pinka";
+                i1.value = "56";
+                i2.value = "45";
+                i3.value = "78";
+                i4.value = "89";
+                c1.value = "56";
+                c2.value = "45";
+                c3.value = "78";
+                c4.value = "89";
 
             }
        
         currentQuestion++;
         questionCount.textContent++;
+        let audio= new Audio('errs.mp3');
+        audio.play();
+
+        let sel=  document.querySelector('input[name="answer"]:checked');
+        sel.checked = false;
     }
     else
     {
-        alert("All questions have been answered!");
+
+       
         currentQuestion = 0;
         questionCount.textContent =0;
+        let scoreContainer = document.createElement("div");
+   scoreContainer.id = "scoreContainer";
+    document.body.appendChild(scoreContainer);
+    
+     let replayButton = document.createElement("button");
+     replayButton.textContent = "start again";
+     replayButton.addEventListener('click', function() {
+        window.location.reload();
+     });
+     let exitButton = document.createElement("button");
+     exitButton.textContent = "exit";
+     exitButton.addEventListener('click', function() {
+        window.close();
+     });
+     let prs= document.createElement("p");
+     prs.textContent =  "Final Score: " + score.textContent;
+     prs.id="finalScore";
+
+     let greet= document.createElement("p");
+     greet.textContent =  "Congratulations! You've completed all the questions.";
+     greet.id="greeting";
+     scoreContainer.appendChild(greet);
+     scoreContainer.appendChild(prs);
+     scoreContainer.appendChild(replayButton);
+     scoreContainer.appendChild(exitButton);
+     score.textContent = 0;
+
+       
+        
     }
 
 });
@@ -183,24 +216,31 @@ let submitButton = document.getElementById("Submit");
 let score = document.getElementById('score');
 let updateScore = 0;
 
-const answer = ["paris", "William Shakespeare", "Jupiter", "Pacific Ocean", "h2o", "Dr. Rajendra Prasad", "ganga", "mahatama gandhi", "sugrewa", "pinka"];
+const answer = ["paris", "William Shakespeare", "Jupiter", "Pacific Ocean", "h2o", "Dr. Rajendra Prasad", "ganga", "mahatama gandhi", "sugrewa", "56"];
 
 submitButton.addEventListener('click', function() {
-    console.log("Button clicked");
+   let audio = new Audio('click.mp3');
+   audio.play();
 
     if (updateScore < answer.length) {
         // Get the selected radio button dynamically
         const selectedAnswer = document.querySelector('input[name="answer"]:checked');
 
+        
+
         // Check if an answer is selected
         if (selectedAnswer) {
+             
             let firstAnswer = answer[updateScore]; // Get the correct answer from the array
 
             // Compare the selected answer with the correct answer
             if (selectedAnswer.value === firstAnswer) {
                 score.textContent = (parseInt(score.textContent) + 1).toString();
+               
             }
-        } else  {
+           
+        } else{
+            
             alert("Please select an answer.");
             
         }
