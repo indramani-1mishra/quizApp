@@ -22,7 +22,7 @@ questionCount.textContent=0;
 
 
 
-let question =["What is the capital of France?", "Who wrote the play Romeo and Juliet", "What is the largest planet in our solar system?", " What is the largest ocean on Earth?", "What is the chemical symbol for water?", "Who was the first President of India?", " Which river is known as the lifeline of India?", " Who is known as the Father of the Nation in India?","What is the name of the monkey king who was a loyal ally of Lord Rama?", " What is 7*8"];
+let question =["What is the capital of France?", "Who wrote the play Romeo and Juliet", "What is the largest planet in our solar system?", " What is the largest ocean on Earth?", "What is the chemical symbol for water?", "Who was the first President of India?", " Which river is known as the lifeline of India?", " Who is known as the Father of the Nation in India?"," monkey king who was a loyal ally of Lord Rama?", " What is 7*8"];
 
 
 let changebutton = document.getElementById('btn');
@@ -175,7 +175,9 @@ changebutton.addEventListener('click', function() {
        
         currentQuestion = 0;
         questionCount.textContent =0;
+       
         let scoreContainer = document.createElement("div");
+
    scoreContainer.id = "scoreContainer";
     document.body.appendChild(scoreContainer);
     
@@ -190,12 +192,17 @@ changebutton.addEventListener('click', function() {
         window.close();
      });
      let prs= document.createElement("p");
-     prs.textContent =  "Final Score: " + score.textContent;
+     prs.textContent =  "Final Score: " + newScore;
      prs.id="finalScore";
 
      let greet= document.createElement("p");
      greet.textContent =  "Congratulations! You've completed all the questions.";
      greet.id="greeting";
+     clearInterval(interval);
+     let time = document.createElement('span');
+     time.textContent = "time taken"+" "+ hour.textContent+"hour" +" "+ minute.textContent+"minutes"+" "+second.textContent+" seconds ";
+     time.id="time3";
+     scoreContainer.appendChild(time);
      scoreContainer.appendChild(greet);
      scoreContainer.appendChild(prs);
      scoreContainer.appendChild(replayButton);
@@ -213,9 +220,9 @@ changebutton.addEventListener('click', function() {
 
 
 let submitButton = document.getElementById("Submit");
-let score = document.getElementById('score');
-let updateScore = 0;
 
+let updateScore = 0;
+let newScore = 0;
 const answer = ["paris", "William Shakespeare", "Jupiter", "Pacific Ocean", "h2o", "Dr. Rajendra Prasad", "ganga", "mahatama gandhi", "sugrewa", "56"];
 
 submitButton.addEventListener('click', function() {
@@ -235,7 +242,9 @@ submitButton.addEventListener('click', function() {
 
             // Compare the selected answer with the correct answer
             if (selectedAnswer.value === firstAnswer) {
-                score.textContent = (parseInt(score.textContent) + 1).toString();
+                //score.textContent = (parseInt(score.textContent) + 1).toString();
+                newScore++;
+               
                
             }
            
@@ -252,6 +261,58 @@ submitButton.addEventListener('click', function() {
         score.textContent =0;
     }
 
-    console.log("Current score:", score.textContent);
+   
     
 });
+
+
+let timeContainer = document.getElementById('time');
+console.log("time", timeContainer.textContent);
+ let second= document.createElement('p');
+ let minute= document.createElement('p');
+ let hour= document.createElement('p');
+ second.textContent = "";
+ minute.textContent = "";
+ hour.textContent = "";
+ timeContainer.appendChild(hour);
+ timeContainer.appendChild(minute);
+ timeContainer.appendChild(second);
+ 
+ let st=0;
+ let mt=0;
+ let ht=0;
+ let interval = setInterval(function() {
+    st++;
+    if(st>=60){
+        st=0;
+        mt++;
+        if(mt>=60){
+            mt=0;
+            ht++;
+        }
+    }
+    //second.textContent = st<10?"0"+st:st;
+    if(st<10){
+        second.textContent = "0"+st;
+    }
+    else
+  {
+    second.textContent = st;
+  }
+  if(mt<10){
+    minute.textContent = "0"+mt+":";
+
+  }
+  else{
+    minute.textContent = mt+":";
+  }
+  
+    hour.textContent = +ht+":";
+  
+   
+}, 1000);
+
+
+
+
+

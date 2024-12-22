@@ -80,7 +80,7 @@ body
     font-size:20px;
     font-weight:bold;
     text-transform:capitalize;
-    
+    background: linear-gradient(#F44336,white,#41a949);
 }
 
 .fisti
@@ -145,12 +145,14 @@ body
     width:100%;
     border:2px solid white;
     background-color:white;
-    color:black;
+    color:#3b5f55;
     text-align:center;
     line-height:40px;
-    font-size:7px;
+    font-size:10px;
     font-weight:bold;
     text-transform:capitalize;
+  background: linear-gradient(#F44336,white,#41a949);
+   
     
 }
     
@@ -187,12 +189,209 @@ body
     
     
 }
-#scoreContainer>button:nth-child(2)
+#scoreContainer>button:nth-child(4)
 {
     background-color:red;
     margin-top:10px;
     color:white;
 }
+#scoreContainer> p:nth-child(1)
+{
+  
+    position:relative;
+    bottom:30px;
+    height:60px;
+    word-spacing:px;
+    letter-spacing:1px;
+    width:80%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#989898;
+    border-radius:5px;
+    
+    
+}
+#scoreContainer> p:nth-child(2)
+{
+    
+   margin-bottom:10px;
+    border:2px solid cornsilk;
+    padding:10px;
+    background-color:#ba7d2b;
+    
+}
+#scoreContainer> p:nth-child(3)
+{
+    border:2px solid silver;
+    padding:5px;
+    background-color:#ba7d2b;
+    
+    
+}
+#time
+{
+    height:30px;
+    width:110px;
+    background-color:#3b3737;
+    margin-right:10px;
+    position:relative;
+     bottom:34px;
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid silver;
+
+}
+
+
+#scoreContainer>span
+{
+    border:2px solid firebrick;
+     padding:15px;
+    margin-bottom:13px;
+    background-color:#8f7e49;
+    font-size:16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
